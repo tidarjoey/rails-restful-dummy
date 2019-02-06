@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :dog
+  resources :dogs
 end
