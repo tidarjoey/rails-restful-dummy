@@ -1,2 +1,7 @@
-<h1>Computers#edit</h1>
-<p>Find me in app/views/computers/edit.html.erb</p>
+<h1>Edit Computer Machine</h1>
+<%= form_with model: @computer do |form| %>
+  <%= form.text_field :name, placeholder: "NEC PC-98" %> <br><br>
+  <%= form.text_area :description, placeholder: "QWERTYUIOP" %> <br><br>
+
+  <%= form.submit %>
+<% end %>

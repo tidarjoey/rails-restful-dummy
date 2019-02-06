@@ -13,7 +13,18 @@ class ComputersController < ApplicationController
   def create
     computer = Computer.create(computer_params)
 
-    redirect_to commputers_path
+    redirect_to commputer_path
+  end
+
+  def edit
+    @computer = Computer.find(params[:id])
+  end
+
+  def update
+    @computer = Computer.find(params[:id])
+    @computer.update(computer_params)
+
+    redirect_to commputer_path(@computer)
   end
 
   private
