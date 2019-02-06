@@ -1,2 +1,6 @@
-<h1>Computers#index</h1>
-<p>Find me in app/views/computers/index.html.erb</p>
+<h1>Computer Machines</h1>
+<ul>
+  <% @computers.each do |computer| %>
+    <li><%= link_to computer.name, computer_path(computer) %></li>
+  <% end %>
+</ul>
