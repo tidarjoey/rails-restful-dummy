@@ -1,2 +1,3 @@
 <h1><%= @computer .name %></h1>
 <h4>"<%= @computer.description %>"</h4>
+<%= link_to 'Delete this record', @computer, method: :delete, data: {confirm: 'Are you sure?'} %>

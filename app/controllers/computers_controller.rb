@@ -28,6 +28,13 @@ class ComputersController < ApplicationController
     redirect_to computer_path(@computer)
   end
 
+  def destroy
+    @computer = Computer.find(params[:id])
+    @computer.destroy
+
+    redirect_to computers_path
+  end
+
   private
   def computer_param
     params.require(:computer).permit(:name, :description)
