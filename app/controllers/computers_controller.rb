@@ -4,16 +4,17 @@ class ComputersController < ApplicationController
   end
 
   def show
+    @computer = Computer.find(params[:id]);
   end
 
   def new
-    @computers = Computer.new
+    @computer = Computer.new
   end
 
   def create
-    computer = Computer.create(computer_params)
+    @computer = Computer.create(computer_param)
 
-    redirect_to commputer_path
+    redirect_to computer_path(@computer)
   end
 
   def edit
@@ -22,16 +23,14 @@ class ComputersController < ApplicationController
 
   def update
     @computer = Computer.find(params[:id])
-    @computer.update(computer_params)
+    @computer.update(computer_param)
 
-    redirect_to commputer_path(@computer)
+    redirect_to computer_path(@computer)
   end
 
   private
-    def computer_param
-      params.require(:computer).permit(:name, :description)
-    end
-
-  def edit
+  def computer_param
+    params.require(:computer).permit(:name, :description)
   end
+
 end
